@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Wave Coaster </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.js"> </script>
+  </head>
+  <body>
+    <h2> North Data </h2>
+    <div id="drawing">
+      <script type="text/javascript">
+        var draw = SVG('drawing').size(500, 500); //canvas size
+        //data of ocean temperature anomalies
+        //data retrieved from https://www.ncdc.noaa.gov/cag/global/time-series/shem/ocean/12/12/1900-2018
+        var dataNorth =
+          [{"NAnomalies":"Units: Degrees Celsius","January":""},{"NAnomalies":"Base Period: 1901-2000","January":""},{"NAnomalies":"Missing: -999","January":""},{"NAnomalies":"Year","January":"Value"},{"NAnomalies":1900,"January":0.15},{"NAnomalies":1901,"January":0.04},{"NAnomalies":1902,"January":-0.23},{"NAnomalies":1903,"January":-0.1},{"NAnomalies":1904,"January":-0.39},{"NAnomalies":1905,"January":-0.43},{"NAnomalies":1906,"January":-0.19},{"NAnomalies":1907,"January":-0.25},{"NAnomalies":1908,"January":-0.37},{"NAnomalies":1909,"January":-0.41},{"NAnomalies":1910,"January":-0.34},{"NAnomalies":1911,"January":-0.41},{"NAnomalies":1912,"January":-0.29},{"NAnomalies":1913,"January":-0.4},{"NAnomalies":1914,"January":-0.21},{"NAnomalies":1915,"January":-0.05},{"NAnomalies":1916,"January":-0.18},{"NAnomalies":1917,"January":-0.4},{"NAnomalies":1918,"January":-0.19},{"NAnomalies":1919,"January":-0.14},{"NAnomalies":1920,"January":-0.25},{"NAnomalies":1921,"January":-0.19},{"NAnomalies":1922,"January":-0.16},{"NAnomalies":1923,"January":-0.24},{"NAnomalies":1924,"January":-0.1},{"NAnomalies":1925,"January":-0.27},{"NAnomalies":1926,"January":0.1},{"NAnomalies":1927,"January":0.02},{"NAnomalies":1928,"January":0.06},{"NAnomalies":1929,"January":-0.22},{"NAnomalies":1930,"January":0},{"NAnomalies":1931,"January":0.1},{"NAnomalies":1932,"January":-0.07},{"NAnomalies":1933,"January":-0.08},{"NAnomalies":1934,"January":-0.24},{"NAnomalies":1935,"January":-0.13},{"NAnomalies":1936,"January":-0.03},{"NAnomalies":1937,"January":0.04},{"NAnomalies":1938,"January":0.03},{"NAnomalies":1939,"January":-0.28},{"NAnomalies":1940,"January":0.03},{"NAnomalies":1941,"January":0.22},{"NAnomalies":1942,"January":0.27},{"NAnomalies":1943,"January":0.15},{"NAnomalies":1944,"January":0.21},{"NAnomalies":1945,"January":0.34},{"NAnomalies":1946,"January":0.19},{"NAnomalies":1947,"January":-0.09},{"NAnomalies":1948,"January":-0.14},{"NAnomalies":1949,"January":0.06},{"NAnomalies":1950,"January":-0.02},{"NAnomalies":1951,"January":-0.03},{"NAnomalies":1952,"January":0.15},{"NAnomalies":1953,"January":0.09},{"NAnomalies":1954,"January":0.09},{"NAnomalies":1955,"January":-0.04},{"NAnomalies":1956,"January":0.04},{"NAnomalies":1957,"January":-0.03},{"NAnomalies":1958,"January":0.29},{"NAnomalies":1959,"January":0.19},{"NAnomalies":1960,"January":0.1},{"NAnomalies":1961,"January":0.09},{"NAnomalies":1962,"January":0.11},{"NAnomalies":1963,"January":0.08},{"NAnomalies":1964,"January":0.1},{"NAnomalies":1965,"January":-0.16},{"NAnomalies":1966,"January":0.06},{"NAnomalies":1967,"January":0},{"NAnomalies":1968,"January":-0.11},{"NAnomalies":1969,"January":0.26},{"NAnomalies":1970,"January":0.06},{"NAnomalies":1971,"January":-0.11},{"NAnomalies":1972,"January":-0.23},{"NAnomalies":1973,"January":0.1},{"NAnomalies":1974,"January":-0.13},{"NAnomalies":1975,"January":-0.06},{"NAnomalies":1976,"January":-0.22},{"NAnomalies":1977,"January":0.08},{"NAnomalies":1978,"January":0.19},{"NAnomalies":1979,"January":0.19},{"NAnomalies":1980,"January":0.27},{"NAnomalies":1981,"January":0.18},{"NAnomalies":1982,"January":0.17},{"NAnomalies":1983,"January":0.24},{"NAnomalies":1984,"January":0.12},{"NAnomalies":1985,"January":-0.06},{"NAnomalies":1986,"January":0.04},{"NAnomalies":1987,"January":0.09},{"NAnomalies":1988,"January":0.39},{"NAnomalies":1989,"January":0.05},{"NAnomalies":1990,"January":0.25},{"NAnomalies":1991,"January":0.38},{"NAnomalies":1992,"January":0.18},{"NAnomalies":1993,"January":0.2},{"NAnomalies":1994,"January":0.17},{"NAnomalies":1995,"January":0.34},{"NAnomalies":1996,"January":0.27},{"NAnomalies":1997,"January":0.22},{"NAnomalies":1998,"January":0.51},{"NAnomalies":1999,"January":0.26},{"NAnomalies":2000,"January":0.19},{"NAnomalies":2001,"January":0.28},{"NAnomalies":2002,"January":0.36},{"NAnomalies":2003,"January":0.43},{"NAnomalies":2004,"January":0.51},{"NAnomalies":2005,"January":0.54},{"NAnomalies":2006,"January":0.4},{"NAnomalies":2007,"January":0.59},{"NAnomalies":2008,"January":0.33},{"NAnomalies":2009,"January":0.41},{"NAnomalies":2010,"January":0.61},{"NAnomalies":2011,"January":0.45},{"NAnomalies":2012,"January":0.41},{"NAnomalies":2013,"January":0.49},{"NAnomalies":2014,"January":0.58},{"NAnomalies":2015,"January":0.69},{"NAnomalies":2016,"January":0.96},{"NAnomalies":2017,"January":0.74},{"NAnomalies":2018,"January":0.67}];
+
+        var angle = 342.2 / 118; //2.9 degrees between every year
+        var rotateAngle = 0;
+        var radius = 5;
+        var subzeroRadius = 300;
+
+        var hypo = 0;
+        var rotX = 0;
+        var rotY = 0;
+
+        var degree = "\u00b0" //unicode for degree symbol
+
+        //draw measurement circles
+        var highFull = draw.circle(400).cx(300).cy(300).fill('none').stroke('#d7dde5');
+        var highSeven = draw.circle(375).cx(300).cy(300).fill('none').stroke('#d7dde5');
+        var highFive = draw.circle(350).cx(300).cy(300).fill('none').stroke('#d7dde5');
+        var highTwo = draw.circle(325).cx(300).cy(300).fill('none').stroke('#d7dde5');
+
+        var lowTwo = draw.circle(275).cx(300).cy(300).fill('none').stroke('#d7dde5');
+        var lowFive = draw.circle(250).cx(300).cy(300).fill('none').stroke('#d7dde5');
+        var lowSeven = draw.circle(225).cx(300).cy(300).fill('none').stroke('#d7dde5');
+
+        var polyArray = []; //initialise an empty array to make the polyline later on
+        for (var i = 4; i < dataNorth.length; i++) {
+          var anomaly = 0;
+          var year = dataNorth[i].NAnomalies;
+          var temp = dataNorth[i].January;
+
+          if (dataNorth[i].January < 0) {
+             anomaly = 450 - subzeroRadius + (Math.abs(dataNorth[i].January * 50));
+             let low = draw.circle(radius).cx(300).cy(anomaly).rotate(rotateAngle, 300, 300).fill('none');
+
+             if (i === 4) {
+               polyArray.push([300, anomaly]);
+             } else { //draw the points for all temperatures below 0
+               hypo = Math.sqrt((2 * Math.pow((300 - anomaly), 2)) - (2 * Math.pow((300 - anomaly), 2) * Math.cos(rotateAngle * Math.PI / 180)));
+               rotX = low.cx() + (hypo * Math.sin((90 - (rotateAngle / 2)) * Math.PI / 180));
+               rotY = low.cy() + (hypo * Math.cos((90 - (rotateAngle / 2)) * Math.PI / 180));
+               polyArray.push([rotX, rotY])
+             }
+             var label = draw.text(year.toString() + ": -" + temp.toString() + degree + "C").size(4).move(290, 200).rotate(rotateAngle, 300, 300);
+             label.rotate(270 + rotateAngle).fill('none');
+          }
+          else if (dataNorth[i].January == 0) { //draw the points for all temperatures equal to 0
+            anomaly = 450 - subzeroRadius - (Math.abs(dataNorth[i].January * 50));
+            let mid = draw.circle(radius).cx(300).cy(anomaly).rotate(rotateAngle, 300, 300).fill('none');
+            hypo = Math.sqrt((2 * Math.pow((300 - anomaly), 2)) - (2 * Math.pow((300 - anomaly), 2) * Math.cos(rotateAngle * Math.PI / 180)));
+            rotX = mid.cx() + (hypo * Math.sin((90 - (rotateAngle / 2)) * Math.PI / 180));
+            rotY = mid.cy() + (hypo * Math.cos((90 - (rotateAngle / 2)) * Math.PI / 180));
+            polyArray.push([rotX, rotY])
+            var label = draw.text(year.toString() + ": +0.00" + degree + "C").size(4).move(290, 200).rotate(rotateAngle, 300, 300);
+            label.rotate(270 + rotateAngle).fill('none');
+          }
+          else { //draw the points for all temperatures above 0
+            anomaly = 450 - subzeroRadius - (Math.abs(dataNorth[i].January * 50));
+            let high = draw.circle(radius).cx(300).cy(anomaly).rotate(rotateAngle, 300, 300).fill('none');
+            hypo = Math.sqrt((2 * Math.pow((300 - anomaly), 2)) - (2 * Math.pow((300 - anomaly), 2) * Math.cos(rotateAngle * Math.PI / 180)));
+            rotX = high.cx() + (hypo * Math.sin((90 - (rotateAngle / 2)) * Math.PI / 180));
+            rotY = high.cy() + (hypo * Math.cos((90 - (rotateAngle / 2)) * Math.PI / 180));
+            polyArray.push([rotX, rotY])
+            var label = draw.text(year.toString() + ": +" + temp.toString() + degree + "C").size(4).move(290, 200).rotate(rotateAngle, 300, 300);
+            label.rotate(270 + rotateAngle).fill('none');
+
+          }
+          rotateAngle += angle;
+        }
+
+        var subzero = draw.circle(subzeroRadius).cx(300).cy(300).fill('none').stroke('black'); //draw circle that indicates 0 degrees
+        var inner = draw.circle(150).cx(300).cy(300).fill('none').stroke('black');
+        var point = draw.circle(2).cx(300).cy(300); //center of the circle, also point of rotation
+
+        draw.polyline(polyArray).stroke('black').fill('none');
+
+        //draw the rotating year marks
+        var yearTips = 0;
+        var startingYear = 1900;
+        for (var i = 0; i < 12; i++) {
+          var line = draw.line(300, 220, 300, 235).stroke({ width: 1 }).rotate(yearTips, 300, 300);
+          var yearLabel = draw.text(startingYear.toString()).size(10).move(290, 200).rotate(yearTips, 300, 300).rotate(270 + yearTips);
+          yearTips += 30;
+          startingYear += 10;
+        }
+
+      </script>
+    </div>
+
+  </body>
+</html>
